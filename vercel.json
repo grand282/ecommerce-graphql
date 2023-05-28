@@ -1,0 +1,16 @@
+{
+    "functions": {
+      "api/graphql": {
+        "runtime": "vercel-node@1.10.0",
+        "memory": 128,
+        "maxDuration": 10
+      }
+    },
+    "routes": [
+      {
+        "src": "/graphql",
+        "dest": "/graphql"
+      }
+    ]
+  }
+  
