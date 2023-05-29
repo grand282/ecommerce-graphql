@@ -9,7 +9,7 @@ functions:
     # Make sure your file path is correct!
     # (e.g., if your file is in the root folder use server.graphqlHandler )
     # The format is: <FILENAME>.<HANDLER>
-    handler: api/graphql/index.graphqlHandler # highlight-line
+    handler: api/graphql/index.js # highlight-line
     events:
       - httpApi:
           path: /
