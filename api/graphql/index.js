@@ -10,7 +10,7 @@ import typeDefs from './schema/typedefs.js';
 import resolvers from './schema/resolvers.js'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose';
-import { startServerAndCreateLambdaHandler, handlers } from '@as-integrations/aws-lambda';
+
 
 //configure env
 dotenv.config()
@@ -42,11 +42,5 @@ mongoose.connect(process.env.MONGO_URL, {
   expressMiddleware(server),
 );
 
-export const graphqlHandler = startServerAndCreateLambdaHandler(
-  server,
-  // We will be using the Proxy V2 handler
-  handlers.createAPIGatewayProxyEventV2RequestHandler(),
-);
-
-/*await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
-console.log(`🚀 Server ready at http://localhost:4000`);*/
+await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+console.log(`🚀 Server ready at http://localhost:4000`);
